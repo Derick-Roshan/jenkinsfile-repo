@@ -11,19 +11,19 @@ pipeline {
 
         stage('Build') { 
             steps {
-                bat 'python demo.py'
+                bat 'C:\Users\ROSHAN\AppData\Local\Programs\Python\Python314\python.exe demo.py'
             }
         }
 
         stage('Test') { 
             steps {
-                bat 'python test.py'
+                bat 'C:\Users\ROSHAN\AppData\Local\Programs\Python\Python314\python.exe test.py'
             }
         }
 
         stage('Deploy') { 
             steps {
-                bat 'python demo1.py'
+                bat 'C:\Users\ROSHAN\AppData\Local\Programs\Python\Python314\python.exe demo.py'
             }
         }
     }
