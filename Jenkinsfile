@@ -3,7 +3,7 @@ pipeline {
 
     stages {
 
-        stage('Checkout') {
+        stage('Check CMD') {
             steps {
                 checkout scm
             }
@@ -11,7 +11,7 @@ pipeline {
 
         stage('Build') { 
             steps {
-                bat "\"C:/Users/ROSHAN/AppData/Local/Programs/Python/Python314/python.exe\" demo.py"
+                bat "\"C:/Users/ROSHAN/AppData/Local/Programs/Python/Python314/python.exe\" test.py"
 
             }
         }
@@ -25,7 +25,7 @@ pipeline {
 
         stage('Deploy') { 
             steps {
-                bat "\"C:/Users/ROSHAN/AppData/Local/Programs/Python/Python314/python.exe\" demo.py"
+                bat "\"C:/Users/ROSHAN/AppData/Local/Programs/Python/Python314/python.exe\" demo1.py"
 
             }
         }
