@@ -3,8 +3,9 @@ pipeline {
 
     stages {
 
-        stage('Checkout') {
+        stage('Test CMD') {
             steps {
+                bat "C:\Windows\System32\cmd.exe" 
                 checkout scm
             }
         }
