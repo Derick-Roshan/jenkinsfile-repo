@@ -11,21 +11,21 @@ pipeline {
 
         stage('Build') { 
             steps {
-                bat bat "\"C:/Users/ROSHAN/AppData/Local/Programs/Python/Python314/python.exe\" demo.py"
+                bat "\"C:/Users/ROSHAN/AppData/Local/Programs/Python/Python314/python.exe\" demo.py"
 
             }
         }
 
         stage('Test') { 
             steps {
-                bat bat "\"C:/Users/ROSHAN/AppData/Local/Programs/Python/Python314/python.exe\" test.py"
+                bat "\"C:/Users/ROSHAN/AppData/Local/Programs/Python/Python314/python.exe\" test.py"
 
             }
         }
 
         stage('Deploy') { 
             steps {
-                bat bat "\"C:/Users/ROSHAN/AppData/Local/Programs/Python/Python314/python.exe\" demo.py"
+                bat "\"C:/Users/ROSHAN/AppData/Local/Programs/Python/Python314/python.exe\" demo.py"
 
             }
         }
