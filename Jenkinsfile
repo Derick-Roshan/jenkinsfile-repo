@@ -3,30 +3,29 @@ pipeline {
 
     stages {
 
-        stage('Test CMD') {
+        stage('Checkout') {
             steps {
-                bat "C:\Windows\System32\cmd.exe" 
                 checkout scm
             }
         }
 
         stage('Build') { 
             steps {
-                bat "C:/Users/ROSHAN/AppData/Local/Programs/Python/Python314/python.exe test.py"
+                bat "/usr/bin/python3 test.py"
 
             }
         }
 
         stage('Test') { 
             steps {
-                bat "C:/Users/ROSHAN/AppData/Local/Programs/Python/Python314/python.exe test.py"
+                bat "/usr/bin/python3 test.py"
 
             }
         }
 
         stage('Deploy') { 
             steps {
-                bat "C:/Users/ROSHAN/AppData/Local/Programs/Python/Python314/python.exe demo1.py"
+                bat "/usr/bin/python3 demo1.py"
 
             }
         }
