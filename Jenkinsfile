@@ -1,33 +1,58 @@
 pipeline {
-    agent any 
+    agent any
+
+    environment {
+        PYTHON = "python3"
+    }
 
     stages {
 
-        stage('Checkout') {
+        stage('Verify Environment') {
             steps {
-                checkout scm
+                sh '''
+                echo "OS:"
+                uname -a
+
+                echo "Python:"
+                $PYTHON --version
+                '''
             }
         }
 
-        stage('Build') { 
+        stage('Build') {
             steps {
-                bat "/usr/bin/python3 test.py"
-
+                sh '''
+                echo "Build stage"
+                $PYTHON demo.py
+                '''
             }
         }
 
-        stage('Test') { 
+        stage('Test') {
             steps {
-                bat "/usr/bin/python3 test.py"
-
+                sh '''
+                echo "Test stage"
+                $PYTHON test.py
+                '''
             }
         }
 
-        stage('Deploy') { 
+        stage('Deploy') {
             steps {
-                bat "/usr/bin/python3 demo1.py"
-
+                sh '''
+                echo "Deploy stage"
+                $PYTHON demo1.py
+                '''
             }
+        }
+    }
+
+    post {
+        failure {
+            echo "❌ Pipeline failed — fix your scripts"
+        }
+        success {
+            echo "✅ Pipeline completed successfully"
         }
     }
 }
